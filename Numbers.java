@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Numbers {
-    Scanner object = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     private int minimumNumber=0;
     private int maximumNUmber = 0;
     private int sum = 0;
@@ -12,12 +12,12 @@ public class Numbers {
     public void setNumbers() {
         System.out.println("Add numbers:");
         for (int i = 0; i < size; i++) {
-            this.arrayList.add(object.nextInt());
+            this.arrayList.add(input.nextInt());
         }
     }
     public void setSize() {
         System.out.print("How many elements would you like to add:");
-        size = object.nextInt();
+        size = input.nextInt();
     }
 
     private int minElement() {
@@ -34,22 +34,24 @@ public class Numbers {
         }
         return this.maximumNUmber;
     }
-    private int sumOfElements(){
+    private int sumOfElements() {
         for (Integer integer : this.arrayList) {
             this.sum = this.sum + integer;
         }
         return sum;
     }
    private void primeNumber(){
-     for(int i=0;i<size;i++){
-         boolean PrimeNumber=true;
+     for (int i=0;i<size;i++) {
+         boolean primeNumber=true;
          for(int j=2;j<arrayList.get(i);j++){
              if(arrayList.get(i)%j==0){
-                 PrimeNumber=false;
+                 primeNumber=false;
                  break;
              }
          }
-         if(PrimeNumber) System.out.println("Number "+ arrayList.get(i) +" is a prime number");
+         if(primeNumber) {
+             System.out.println("Number "+ arrayList.get(i) +" is a prime number");
+         }
          else System.out.println("Number "+ arrayList.get(i)+" is not a prime number");
      }
       }

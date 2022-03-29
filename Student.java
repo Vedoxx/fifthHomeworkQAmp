@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Student {
-    Scanner object = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     Integer number;
     String name;
     HashMap<Integer, String> studentinfo = new HashMap<>();
@@ -35,12 +35,12 @@ public class Student {
     }
 
     public void addStudent() {
-        object.nextLine();
+        input.nextLine();
         System.out.print("Enter name of student:");
-        String name = object.nextLine();
+        String name = input.nextLine();
         this.name = name;
         System.out.print("Enter index for the new student:");
-        Integer number = object.nextInt();
+        Integer number = input.nextInt();
         this.number = number;
         studentinfo.put(this.number, this.name);
         System.out.println("New student is added");
@@ -49,12 +49,12 @@ public class Student {
 
     public void changeStudent() {
         System.out.println("Enter index of the student and new name for the student:");
-        studentinfo.replace(object.nextInt(),object.next());
+        studentinfo.replace(input.nextInt(),input.next());
         System.out.println("Student new data"+studentinfo);
     }
   public void eraseElement(){
       System.out.println("Enter index of the student you want to remove:");
-      Integer index=object.nextInt();
+      Integer index=input.nextInt();
       this.number=index;
       studentinfo.remove(index);
       System.out.println("Student is removed!");
